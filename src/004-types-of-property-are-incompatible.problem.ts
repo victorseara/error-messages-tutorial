@@ -1,3 +1,12 @@
+type Route = {
+  path: string;
+  component: string;
+};
+
+type RouteConfig = {
+  routes: Route[]; 
+}
+
 const routingConfig = {
   routes: [
     {
@@ -13,12 +22,12 @@ const routingConfig = {
       component: "ContactComponent",
     },
   ],
-};
+} satisfies RouteConfig;
 
 const createRoutes = (config: {
   routes: {
     path: string;
-    component: string;
+    component: string | number;
   }[];
 }) => {};
 
